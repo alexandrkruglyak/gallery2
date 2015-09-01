@@ -1,0 +1,175 @@
+body {
+     margin: 23px !important;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;	
+}
+
+.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
+    margin-top: 2px;
+}
+
+select, input[type="file"] {
+    height: 100%;
+}
+
+#image-block {
+    display: none;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#left {
+    float: left;
+    min-height: 76px;
+}
+
+#right {
+    left: 36%;
+    position: absolute;
+    top: 3%;
+    display: none;
+}
+#upload-form {
+    margin: 0 auto;
+    width: 400px;
+}
+
+#save {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#main .dropdown-menu {
+    padding: 0;
+    right: 0;
+}
+.dropdown-menu li{
+    border-bottom: 1px solid #E9E8E2;
+}
+.dropdown-menu li:last-child{
+    border-bottom: none;
+}
+.dropdown-menu li a{
+    text-align: center;
+}
+// Стили для окна - "Изменения коментариея". UI-Modal(dialog)
+.ui-widget-content {
+    height: auto !important;
+}
+
+#dialog-form {
+    display: none;
+    height: auto !important;
+}
+
+#dialog-confirm {
+    display: none;
+}
+.ui-icon-alert,
+.ui-icon{
+    float:left; 
+    margin:0 7px 20px 0;
+}
+.comment,
+.comm{
+    width: 96%;
+}
+
+#butUpload {
+    margin: 10px 0 30px;
+    width: 90%;
+}
+#upload-Files {
+    padding: 0 40%;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#upload-Files img{
+    margin-left: 25px;
+    border: 1px solid #B3B3B3;
+    margin-left: 25px;
+    padding: 2px;
+}
+
+#upload-Files .loading,
+#upload-Files .success-ico{
+    border: none;
+    display: none;
+}
+
+.dawnload-img {
+    margin: 0 10px;
+}
+
+.info {
+    margin: -5px 0 15px;
+}
+
+.info tr {
+    margin-bottom: 5px;
+}
+
+#del-t .icon-remove-sign{
+    margin-right: 5px;
+}
+
+#dialog-message-comm,
+#dialog-message-img,
+#message-img-size,
+#message-img-type,
+#img-size{
+    display: none;
+}
+
+p .ui-icon-circle-minus {
+    margin: 2px 7px 30px 0 !important;
+}
+
+.alert-success .ui-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.alert-success .ui-icon-check {
+    background-position: -64px -143px;
+}
+
+#success-save {
+    display: none;
+}
+#main {
+    margin-top: 100px;
+}
+#main .thumbnails {
+    margin: 0 auto;
+    width: 100%;
+}
+#main .span3 {
+    margin: 36px 10px 20px 45px;
+}
+.thumbnail .btn-danger {
+    margin: 0 14px;
+}
+#block-img {
+    display: table-cell;
+    height: 400px;
+    position: relative;
+    vertical-align: middle;
+    width: 1%;
+}
+#block-img img {
+    display: block;
+    margin: 0 auto;
+    max-height: 281px;
+    text-align: center;
+    width: 200px;
+}
+
+#block_coppy {
+    display: none;
+}
