@@ -74,9 +74,12 @@ select, input[type="file"] {
     float:left; 
     margin:0 7px 20px 0;
 }
-.comment,
-.comm{
+#comment, .comm {
     width: 96%;
+}
+.comment{
+    width: 200px;
+    overflow: hidden;
 }
 
 #butUpload {

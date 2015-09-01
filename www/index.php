@@ -5,7 +5,7 @@ session_start();
 require_once 'config.php';
 
 //подключение к конфигурационному файлу
-require_once 'myFunction.php';
+require_once 'myfunction.php';
 
 //подключение к бд
 require_once 'database.php';
