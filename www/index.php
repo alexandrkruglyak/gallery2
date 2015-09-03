@@ -28,8 +28,8 @@ $order_db = $order_p['dated'][1];
 $arr = $db->getAll($order_db);
 
 // получаем возможный параметр сортировки
-if($_GET['order']) {
-$order_get = ($_GET['order']); 
+if($_POST['key']) {
+$order_get = $_POST['key'];
 if(array_key_exists($order_get, $order_p)){
     $order = $order_p[$order_get][0];
     $order_db = $order_p[$order_get][1];
@@ -39,7 +39,8 @@ if(array_key_exists($order_get, $order_p)){
     $order_db = $order_p['namea'][1];
 }
 //Массив данных из таблицы "image"
-$arr = $db->getAll($order_db);       
+$arr = $db->getAll($order_db);
+exit(json_encode($arr));
 }
 
 //Данные для удаления  сессии

@@ -5,16 +5,98 @@ var imgObject = Object();
     imgObject.children_comment = null;
     imgObject.last_id = null;
     imgObject.date = getDate();
+    imgObject.thumbnails = null;
+    
+//    imgObject.thumbnails  = $('.thumbnail');
+//    $.each( imgObject.thumbnails, function(i, n){
+//        alert( "Item #" + i + ": " + n );
+//    });
+//    for(i=0; i<=imgObject.thumbnails.length; i++) {
+//        
+//    }
+    //console.log(imgObject.thumbnails);
+//    var i = 2;
+//            $('.thumbnail').children('#block-img:eq('+i+')').children('.comment').text("comment");
+//    
+//var i = 6;
+// $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('img').attr("src", "img/load/");
+// 
 
+$(".order_link").click(function(eventObject){
+    eventObject.preventDefault();
+    var key = $(this).attr("href");
+    $(this).parents(".btn-group").children(".btn:first-child").text("Сортировать картинки  " + $(this).text());
+    $.ajax({    // если не прошла то удаляем сессию
+        url: "./",
+        type: "POST",
+        data: {key: key},
+        success: function (res) {
+            var arr = JSON.parse(res);
+            var countPropetys = countPropertys(arr[0]);
+//            var thumbLength = $('.thumbnail').length;
+//            var thumbnails  = $('.span3 .thumbnail');
+            for(var i = 0; i <= arr.length; i++){
+                for(var j = 0; j <= countPropetys; j++){
+                    var id = arr[i]['id'];
+                    var title = arr[i]['title'];
+                    var size = arr['size'];
+                    var comment = arr[i]['comment'];
+                    var date = arr[i]['date'];
+                }
+
+                    $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('#img-size').val(title);
+                    $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('img').attr("src", "img/load/"+title);
+                    $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('.comment').attr("class", "comment "+id);
+                    $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('.comment').text(comment);
+                    $('.thumbnails').children('.span3:eq('+i+')').children('.thumbnail').children('#block-img').children('span').text(getDate(date));
+
+            }
+            console.log(arr);
+            
+        },
+//            "id":"336","title":"dogs.jpg","size":"7143","comment"
+            
+            
+//$("#btn19").click(function(){
+//    var num=1;
+//    $('.div19').each(function(){// для каждого элемента с таким классом 
+//        $(this).html(num);// для текущего записываем переменную
+//        num++;// увеличиваем переменную на 1
+//    });
+//});
+    });
+});
+// Подсчет количества свойств в обьекте
+function countPropertys(obj) {
+    var count = 0;
+    for(var prs in obj)
+    {
+             if(obj.hasOwnProperty(prs)) count++;
+    }
+    return count;
+ }
 //Текущее время в удобном формате    
-function getDate() {
-    var date = new Date();
-    var month_num = date.getMonth()
-    var day = date.getDate();
-    if (day <= 9) day = "0" + day;
-    if (month_num <= 9) month_num = "0" + month_num;
-    var now = day+"."+month_num+"."+date.getFullYear();
-    return now;
+function getDate(timestamp) {
+    //Если timestamp то переводим
+    if(timestamp) {
+        var theDate = new Date(timestamp * 1000);
+        var month_num = theDate.getMonth()
+        var day = theDate.getDate();
+        if (day <= 9) day = "0" + day;
+        if (month_num <= 9) month_num = "0" + month_num;
+        var now = day+"."+month_num+"."+theDate.getFullYear();
+        return now;
+    }
+    //Если не timestamp то создаем текущую дату
+    else{
+        var date = new Date();
+        var month_num = date.getMonth()
+        var day = date.getDate();
+        if (day <= 9) day = "0" + day;
+        if (month_num <= 9) month_num = "0" + month_num;
+        var now = day+"."+month_num+"."+date.getFullYear();
+        return now;
+    }
 }    
 // кнопка загрузка картинки + интервал ожидания(гиф анимация)
     var button = $("#butUpload"), interval; 

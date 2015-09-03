@@ -107,8 +107,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <?php foreach ($order_p as $key => $val): ?>
-                            <?php if($order == $val[0]) continue; ?>
-                            <li><a href="?order=<?= $key ?>"><?=$val[0]?></a></li>
+                            <li><a class="order_link" href="<?= $key ?>"><?=$val[0]?></a></li>
                             <?php endforeach;  ?>
                         </ul>
                     </div>
@@ -119,10 +118,10 @@
                         <li id='' class="span3">
                             <div class="thumbnail">
                                 <div id="block-img">
-                                <input type="hidden" id="img-size" value="<?php echo $img['title'] ?>" name="img-size">
-                                <img src="img/load/<?php echo $img['title'] ?>" alt="">
-                                <h5 class="comment <?php echo $img['id'] ?>"><?php echo $img['comment'] ?></h5>
-                                <span><?php echo $my_function->getDate($img['date']) ?></span>
+                                    <input type="hidden" id="img-size" value="<?php echo $img['title'] ?>" name="img-size">
+                                    <img src="img/load/<?php echo $img['title'] ?>" alt="">
+                                    <h5 class="comment <?php echo $img['id'] ?>"><?php echo $img['comment'] ?></h5>
+                                    <span><?php echo $my_function->getDate($img['date']) ?></span>
                                 </div>
                                 <a class="btn btn-danger" href="#">Удалить</a>
                                 <a class="btn btn-link" href="#">Изменить</a>
@@ -146,10 +145,10 @@
                         <li id='' class="span3" style="display: none">
                             <div class="thumbnail">
                                 <div id="block-img">
-                                <input type="hidden" id="img-size" value="<?php echo $img['title'] ?>" name="img-size">
-                                <img src="img/load/<?php echo $img['title'] ?>" alt="">
-                                <h5 class="comment <?php echo $img['id'] ?>"><?php echo $img['comment'] ?></h5>
-                                <span><?php echo $my_function->getDate($img['date']) ?></span>
+                                    <input type="hidden" id="img-size" value="<?php echo $img['title'] ?>" name="img-size">
+                                    <img src="img/load/<?php echo $img['title'] ?>" alt="">
+                                    <h5 class="comment <?php echo $img['id'] ?>"><?php echo $img['comment'] ?></h5>
+                                    <span><?php echo $my_function->getDate($img['date']) ?></span>
                                 </div>
                                 <a class="btn btn-danger" href="#">Удалить</a>
                                 <a class="btn btn-link" href="#">Изменить</a>
